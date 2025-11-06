@@ -1,6 +1,10 @@
 fastapi==0.115.0
 uvicorn==0.30.6
 pydantic==2.9.2
-# Optional for real LLM usage
+# Strands agents for agentic workflow
+strands-agents>=0.1.0
+# AWS Bedrock support
+boto3>=1.34.0
+# Optional for real LLM usage (keeping for backward compatibility)
 openai==1.51.2
 

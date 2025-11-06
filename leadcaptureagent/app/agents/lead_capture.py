@@ -1,14 +1,17 @@
 import re
-from typing import Dict
+from typing import Dict, Union
 from uuid import uuid4
 
 from ..llm import LLMClient
+from ..llm_bedrock import BedrockLLMClient
 from ..models import Lead
 from ..repository import LeadRepository
 
 
 class LeadCaptureAgent:
-    def __init__(self, llm: LLMClient, repo: LeadRepository) -> None:
+    """Agentic Lead Capture Agent using Strands agents with AWS Bedrock."""
+    
+    def __init__(self, llm: Union[LLMClient, BedrockLLMClient], repo: LeadRepository) -> None:
         self._llm = llm
         self._repo = repo
 
